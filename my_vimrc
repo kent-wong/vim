@@ -1,0 +1,32 @@
+let mapleader=','
+
+nnoremap gl f(l
+nnoremap gL F(l
+nnoremap g; f)
+
+vnoremap gl f(l
+vnoremap gL F(l
+vnoremap g; f)
+
+nnoremap <leader>e $
+nnoremap <leader>b ^
+vnoremap <leader>e $
+vnoremap <leader>b ^
+
+nnoremap <leader>( i(<esc>miEa)<esc>`i
+nnoremap <leader>) i)<esc>Bi(<esc>
+
+nnoremap <silent> gn /\d\+<cr>
+nnoremap <silent> gN ?\d\+<cr>
+
+nnoremap <F5> :w<cr>:!python %<cr>
+nnoremap <c-m> :w<cr>:!python %<cr>
+
+nnoremap dI dt)
+nnoremap cI ct)
+
+noremap <silent> <c-n>	  <esc>:tabnew<cr>
+noremap <silent> <c-tab> <esc>:tabnext<cr>
+
+set autoindent
+color industry
