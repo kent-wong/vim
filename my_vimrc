@@ -28,5 +28,11 @@ nnoremap cI ct)
 noremap <silent> <c-n>	  <esc>:tabnew<cr>
 noremap <silent> <c-tab> <esc>:tabnext<cr>
 
+set nobackup
 set autoindent
-color industry
+set nohls
+color darkblue
+set noexpandtab
+set sw=8
+set guifont=Consolas:h16:cANSI
+filetype plugin indent on
