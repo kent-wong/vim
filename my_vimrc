@@ -21,6 +21,8 @@ nnoremap <silent> gN ?\d\+<cr>
 
 nnoremap <F5> :w<cr>:!python %<cr>
 nnoremap <c-m> :w<cr>:!python %<cr>
+nnoremap <c-c> :w<cr>:!g++  %<cr>
+nnoremap <c-x> :w<cr>:!./a.out<cr>
 
 nnoremap dI dt)
 nnoremap cI ct)
