@@ -1,3 +1,37 @@
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
 let mapleader=','
 
 nnoremap gl f(l
@@ -13,19 +47,28 @@ nnoremap <leader>b ^
 vnoremap <leader>e $
 vnoremap <leader>b ^
 
+nnoremap <leader><space> f_l
+vnoremap <leader><space> f_l
+
+nnoremap <leader>. f=w
+vnoremap <leader>. f=w
+
 nnoremap <leader>( i(<esc>miEa)<esc>`i
 nnoremap <leader>) i)<esc>Bi(<esc>
 
 nnoremap <silent> gn /\d\+<cr>
 nnoremap <silent> gN ?\d\+<cr>
 
-nnoremap <F5> :w<cr>:!python %<cr>
-nnoremap <c-m> :w<cr>:!python %<cr>
-nnoremap <c-c> :w<cr>:!g++  %<cr>
-nnoremap <c-x> :w<cr>:!./a.out<cr>
+nnoremap <silent> <leader><leader> /[+-/*]\+<cr>
+
+nnoremap <c-m> :w<cr>:!node %<cr>
+nnoremap <c-j> :w<cr>:!node %<cr>
+nnoremap <c-k> :w<cr>:!nvcc % -o %:r<cr>
+nnoremap <c-x> :w<cr>:!%:r<cr>
 
 nnoremap dI dt)
 nnoremap cI ct)
+nnoremap yI yt)
 
 noremap <silent> <c-n>	  <esc>:tabnew<cr>
 noremap <silent> <c-tab> <esc>:tabnext<cr>
@@ -35,6 +78,8 @@ set autoindent
 set nohls
 color darkblue
 set noexpandtab
-set sw=8
+set sw=4
+set ts=4
 set guifont=Consolas:h16:cANSI
+set encoding=utf8
 filetype plugin indent on
