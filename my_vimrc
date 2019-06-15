@@ -47,11 +47,11 @@ nnoremap <leader>b ^
 vnoremap <leader>e $
 vnoremap <leader>b ^
 
-nnoremap <leader><space> f_l
-vnoremap <leader><space> f_l
+nnoremap <leader>. f_l
+vnoremap <leader>. f_l
 
-nnoremap <leader>. f=w
-vnoremap <leader>. f=w
+nnoremap <leader><space> f=w
+vnoremap <leader><space> f=w
 
 nnoremap <leader>( i(<esc>miEa)<esc>`i
 nnoremap <leader>) i)<esc>Bi(<esc>
