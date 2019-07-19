@@ -80,6 +80,25 @@ color darkblue
 set noexpandtab
 set sw=4
 set ts=4
+set expandtab
 set guifont=Consolas:h16:cANSI
 set encoding=utf8
 filetype plugin indent on
+
+if has("cscope")
+	set csprg=/usr/bin/cscope
+	set csto=0
+	set cst
+	set nocsverb
+
+	if filereadable("cscope.out")
+		cs add cscope.out
+	elseif $CSCOPE_DB != ""
+		cs add $CSCOPE_DB
+	endif
+	set csverb
+endif
+
+nnoremap <c-]> :cs find g <C-R><C-W><CR>zz
+nnoremap <leader>g :cs find g <C-R><C-W><CR>zz
+nnoremap <leader>f :cs find s <C-R><C-W><CR>
