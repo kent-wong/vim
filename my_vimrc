@@ -26,7 +26,7 @@ nnoremap <silent> gn /\d\+<cr>
 nnoremap <silent> gN ?\d\+<cr>
 
 nnoremap <F5> :w<cr>:!python %<cr>
-nnoremap <c-m> :w<cr>:!flex % && cc lex.yy.c<cr>
+nnoremap <c-m> :w<cr>:!node %<cr>
 nnoremap <c-c> :w<cr>:!gcc  %<cr>
 nnoremap <c-x> :w<cr>:!gcc % && ./a.out<cr>
 
@@ -35,6 +35,10 @@ nnoremap cI ct)
 
 noremap <silent> <c-n>	  <esc>:tabnew<cr>
 noremap <silent> <c-tab> <esc>:tabnext<cr>
+
+iabbrev cons console.log();<esc>hh
+iabbrev foro for (let v of) {<CR>}<ESC>gkf)i
+iabbrev fori for (let i = 0; i <; i ++) {<CR>}<ESC>gkf;;i
 
 set nobackup
 set autoindent
