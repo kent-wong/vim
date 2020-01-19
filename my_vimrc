@@ -27,6 +27,7 @@ nnoremap <silent> gN ?\d\+<cr>
 
 nnoremap <F5> :w<cr>:!python %<cr>
 nnoremap <c-m> :w<cr>:!node %<cr>
+nnoremap <c-j> :w<cr>:!ruby %<cr>
 nnoremap <c-c> :w<cr>:!gcc  %<cr>
 nnoremap <c-x> :w<cr>:!gcc % && ./a.out<cr>
 
@@ -39,6 +40,9 @@ noremap <silent> <c-tab> <esc>:tabnext<cr>
 iabbrev cons console.log();<esc>hh
 iabbrev foro for (let v of) {<CR>}<ESC>gkf)i
 iabbrev fori for (let i = 0; i <; i ++) {<CR>}<ESC>gkf;;i
+iabbrev forj for (let j = 0; j <; j ++) {<CR>}<ESC>gkf;;j
+iabbrev d, { \|x\| }<ESC>hi
+iabbrev do, { \|x\|<CR>}<ESC><s-o>
 
 set nobackup
 set autoindent
