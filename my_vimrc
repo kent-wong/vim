@@ -15,15 +15,17 @@ iabbrev cons console.log();<esc>hh
 iabbrev foro for (let v of) {<CR>}<ESC>gkf)i
 iabbrev fori for (let i = 0; i <; i ++) {<CR>}<ESC>gkf;;i
 iabbrev forj for (let j = 0; j <; j ++) {<CR>}<ESC>gkf;;i
+iabbrev fin for (const key in) {<CR>}<ESC>kf)i
 iabbrev d, {\|x\| }<ESC>hi
 iabbrev do, {\|x\|<CR>}<ESC><s-O>
-iabbrev fun function () {<CR>}<ESC>kglh
+iabbrev fun function () {<CR>}<ESC>kg;h
 iabbrev fn () => {<CR>}<ESC>kg;h
 iabbrev consto const = {<CR>}<ESC>kf=hi
 iabbrev arri arr[i]<ESC>hh
 iabbrev arrj arr[j]<ESC>hh
 iabbrev if, if () {<CR>}<ESC>kf(
 iabbrev wh, while () {<CR>}<ESC>kf(
+iabbrev el, else {<CR>}<ESC><s-O><BS>
 
 nnoremap <leader>e $
 nnoremap <leader>b ^
