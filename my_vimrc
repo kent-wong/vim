@@ -1,48 +1,65 @@
+
 let mapleader=','
 
 nnoremap gl f(l
 nnoremap gL F(l
 nnoremap g; f)
+nnoremap gb f[l
 
 vnoremap gl f(l
 vnoremap gL F(l
 vnoremap g; f)
+vnoremap gb f[l
+
+iabbrev cons console.log();<esc>hh
+iabbrev foro for (let v of) {<CR>}<ESC>gkf)i
+iabbrev fori for (let i = 0; i <; i ++) {<CR>}<ESC>gkf;;i
+iabbrev forj for (let j = 0; j <; j ++) {<CR>}<ESC>gkf;;i
+iabbrev d, {\|x\| }<ESC>hi
+iabbrev do, {\|x\|<CR>}<ESC><s-O>
+iabbrev fun function () {<CR>}<ESC>kglh
+iabbrev fn () => {<CR>}<ESC>kg;h
+iabbrev consto const = {<CR>}<ESC>kf=hi
+iabbrev arri arr[i]<ESC>hh
+iabbrev arrj arr[j]<ESC>hh
+iabbrev if, if () {<CR>}<ESC>kf(
+iabbrev wh, while () {<CR>}<ESC>kf(
 
 nnoremap <leader>e $
 nnoremap <leader>b ^
 vnoremap <leader>e $
 vnoremap <leader>b ^
 
+nnoremap <leader>. f_l
+vnoremap <leader>. f_l
+
 nnoremap <leader><space> f=w
 vnoremap <leader><space> f=w
 
-nnoremap <leader>, f,w
-vnoremap <leader>, f,w
-
-nnoremap <leader>( Bi(<esc>miEa)<esc>`i
-nnoremap <leader>) Ea)<esc>Bi(<esc>
+nnoremap <leader>( i(<esc>miEa)<esc>`i
+nnoremap <leader>) i)<esc>Bi(<esc>
 
 nnoremap <silent> gn /\d\+<cr>
 nnoremap <silent> gN ?\d\+<cr>
 
-nnoremap <F5> :w<cr>:!python %<cr>
-nnoremap <c-m> :w<cr>:!node %<cr>
-nnoremap <c-j> :w<cr>:!ruby %<cr>
-nnoremap <c-c> :w<cr>:!gcc  %<cr>
-nnoremap <c-x> :w<cr>:!gcc % && ./a.out<cr>
+nnoremap <silent> g> /[+-/]/<CR>w
+nnoremap <silent> g< F=w
 
 nnoremap dI dt)
 nnoremap cI ct)
+nnoremap yI yt)
+
+noremap <silent> <c-p> <esc>yypf(ct)(
+
+nnoremap <silent> <leader><leader> /[+-/*]\+<cr>
+
+nnoremap <c-m> :w<cr>:!node %<cr>
+nnoremap <c-j> :w<cr>:!ruby %<cr>
+nnoremap <c-k> :w<cr>:!ruby %<cr>
+nnoremap <c-x> :w<cr>:!%:r<cr>
 
 noremap <silent> <c-n>	  <esc>:tabnew<cr>
 noremap <silent> <c-tab> <esc>:tabnext<cr>
-
-iabbrev cons console.log();<esc>hh
-iabbrev foro for (let v of) {<CR>}<ESC>gkf)i
-iabbrev fori for (let i = 0; i <; i ++) {<CR>}<ESC>gkf;;i
-iabbrev forj for (let j = 0; j <; j ++) {<CR>}<ESC>gkf;;j
-iabbrev d, { \|x\| }<ESC>hi
-iabbrev do, { \|x\|<CR>}<ESC><s-o>
 
 set nobackup
 set autoindent
@@ -50,25 +67,8 @@ set smartindent
 set nohls
 color darkblue
 set expandtab
-set sw=4
-set ts=4
+set sw=2
+set ts=2
 set guifont=Consolas:h16:cANSI
+set encoding=utf-8
 filetype plugin indent on
-
-if has("cscope")
-	set csprg=/usr/bin/cscope
-	set csto=0
-	set cst
-	set nocsverb
-
-	if filereadable("cscope.out")
-		cs add cscope.out
-	elseif $CSCOPE_DB != ""
-		cs add $CSCOPE_DB
-	endif
-	set csverb
-endif
-
-nnoremap <c-]> :cs find g <C-R><C-W><CR>zz
-nnoremap <leader>g :cs find g <C-R><C-W><CR>zz
-nnoremap <leader>f :cs find s <C-R><C-W><CR>
