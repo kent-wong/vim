@@ -14,6 +14,7 @@ vnoremap gb f[l
 iabbrev cons console.log();<esc>hh
 iabbrev foro for (let v of) {<CR>}<ESC>gkf)i
 iabbrev fori for (let i = 0; i <; i ++) {<CR>}<ESC>gkf;;i
+iabbrev forr for (let i =; i >= 0; i --) {<CR>}<ESC>gkf;i
 iabbrev forj for (let j = 0; j <; j ++) {<CR>}<ESC>gkf;;i
 iabbrev fin for (const key in) {<CR>}<ESC>kf)i
 iabbrev d, {\|x\| }<ESC>hi
@@ -29,17 +30,14 @@ iabbrev el, else {<CR>}<ESC><s-O><BS>
 
 nnoremap <leader>e $
 nnoremap <leader>b ^
+nnoremap <leader><leader> $
 vnoremap <leader>e $
 vnoremap <leader>b ^
+vnoremap <leader><leader> ^
 
-nnoremap <leader>. f_l
-vnoremap <leader>. f_l
 
 nnoremap <leader><space> f=w
 vnoremap <leader><space> f=w
-
-nnoremap <leader>( i(<esc>miEa)<esc>`i
-nnoremap <leader>) i)<esc>Bi(<esc>
 
 nnoremap <silent> gn /\d\+<cr>
 nnoremap <silent> gN ?\d\+<cr>
@@ -53,7 +51,6 @@ nnoremap yI yt)
 
 noremap <silent> <c-p> <esc>yypf(ct)(
 
-nnoremap <silent> <leader><leader> /[+-/*]\+<cr>
 
 nnoremap <c-m> :w<cr>:!node %<cr>
 nnoremap <c-j> :w<cr>:!ruby %<cr>
