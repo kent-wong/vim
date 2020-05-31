@@ -21,12 +21,13 @@ iabbrev d, {\|x\| }<ESC>hi
 iabbrev do, {\|x\|<CR>}<ESC><s-O>
 iabbrev fun function () {<CR>}<ESC>kg;h
 iabbrev fn () => {<CR>}<ESC>kg;h
+iabbrev fns el => el
 iabbrev consto const = {<CR>}<ESC>kf=hi
 iabbrev arri arr[i]<ESC>hh
 iabbrev arrj arr[j]<ESC>hh
 iabbrev if, if () {<CR>}<ESC>kf(
 iabbrev wh, while () {<CR>}<ESC>kf(
-iabbrev el, else {<CR>}<ESC><s-O><BS>
+iabbrev el, else {<CR>}<ESC>
 
 nnoremap <leader>e $
 nnoremap <leader>b ^
