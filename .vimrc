@@ -12,10 +12,10 @@ vnoremap g; f)
 vnoremap gb f[l
 
 iabbrev cons console.log();<esc>hh
-iabbrev foro for (let v of) {<CR>}<ESC>gkf)i
+iabbrev foro for (let el of) {<CR>}<ESC>gkf)i
 iabbrev fori for (let i = 0; i <; i ++) {<CR>}<ESC>gkf;;i
-iabbrev forr for (let i =; i >= 0; i --) {<CR>}<ESC>gkf;i
 iabbrev forj for (let j = 0; j <; j ++) {<CR>}<ESC>gkf;;i
+iabbrev forr for (let i =; i >= 0; i --) {<CR>}<ESC>gkf;i
 iabbrev fin for (const key in) {<CR>}<ESC>kf)i
 iabbrev d, {\|x\| }<ESC>hi
 iabbrev do, {\|x\|<CR>}<ESC><s-O>
