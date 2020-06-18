@@ -27,7 +27,7 @@ iabbrev arri arr[i]<ESC>hh
 iabbrev arrj arr[j]<ESC>hh
 iabbrev if, if () {<CR>}<ESC>kf(
 iabbrev wh, while () {<CR>}<ESC>kf(
-iabbrev el, else {<CR>}<ESC>
+iabbrev el, else {<CR>}<ESC>%h
 iabbrev try try {<ESC>j>>o} catch(e) {<CR>}<ESC>%h
 
 nnoremap <leader>e $
@@ -49,6 +49,8 @@ nnoremap <silent> g< F=w
 
 nnoremap <silent> gm /^\s\+\(async\)*\(static\)*\s*\w\+(.*) {<CR>
 nnoremap <silent> gM ?^\s\+\(async\)*\(static\)*\s*\w\+(.*) {<CR>
+
+nnoremap <silent> gs f)%b
 
 nnoremap dI dt)
 nnoremap cI ct)
